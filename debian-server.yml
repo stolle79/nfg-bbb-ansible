@@ -1,0 +1,43 @@
+---
+- name: Update and install standard packages
+  hosts: debian-server
+  tasks:
+    # update apt repository and all packages to lates
+    - name: apt update
+      apt:
+        update_cache: yes
+
+    - name: apt upgrade
+      apt:
+        name: "*"
+        state: latest
+
+    # clean up packages
+    - name: apt autoremove
+      apt:
+        autoremove: yes
+
+    - name: apt autoclean
+      apt:
+        autoclean: yes
+
+    # ensure some packages we recommend for every linxu server
+    - name: install python3
+      apt:
+        name: python3
+        state: latest
+
+    - name: install python3-venv
+      apt:
+        name: python3-venv
+        state: latest
+
+    - name: install python3-pip
+      apt:
+        name: python3-pip
+        state: latest
+
+    - name: install mosh
+      apt:
+        name: mosh
+        state: latest
