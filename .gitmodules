@@ -1,0 +1,9 @@
+[submodule "roles/ansible-role-bigbluebutton"]
+	path = roles/ansible-role-bigbluebutton
+	url = https://github.com/geerlingguy/ansible-role-docker.git
+[submodule "geerlingguy.nodejs"]
+	path = geerlingguy.nodejs
+	url = https://github.com/geerlingguy/ansible-role-nodejs
+[submodule "geerlingguy.docker"]
+	path = geerlingguy.docker
+	url = https://github.com/geerlingguy/ansible-role-docker.git
