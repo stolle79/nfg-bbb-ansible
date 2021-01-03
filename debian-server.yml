@@ -1,6 +1,7 @@
 ---
 - name: Update and install standard packages
-  hosts: debian-server
+  hosts: localhost
+  connection: local 
   tasks:
     # update apt repository and all packages to lates
     - name: apt update
