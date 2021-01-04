@@ -1,9 +1,14 @@
 ---
 - name: Install BigBlueButton
-  hosts: bbb-server
+  hosts: localhost
+  connection: local
+  gather_facts: True
   roles:
-     - { role: ansible-role-bigbluebutton,
-         bbb_coturn_secret: ee8d093109a9b273,
-         bbb_greenlight_secret: 107308d54ff4a5f,
-         bbb_greenlight_db_password: 2585c27c785e8895ec,
-         bbb_letsencrypt_email: mail@example.com }
+    - role: ansible-role-bigbluebutton
+      bbb_server_name: bbb.edu-cattle.de
+      bbb_configure_nat: True
+      bbb_install_demo: True
+      bbb_install_check: True
+      bbb_configure_ssl: True
+      bbb_ssl_email: stolle.login+nfg-bbb@icloud.com
+
